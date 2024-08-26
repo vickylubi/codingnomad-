@@ -1,0 +1,104 @@
+import numpy as np 
+
+one_d_arr = np.array ([10,12])
+print (one_d_arr)
+
+# Create and print a NumPy array 'a' containing the elements 1, 2, 3.
+a = np.array ([1,2,3])
+
+# Create an array with 3 integers, starting from the default integer 0.
+b = np.arange(3)
+print (b)
+
+# Create an array that starts from the integer 1, ends at 20, incremented by 3.
+c = np.arange (1,20,3)
+print (c)
+
+d = np.arange (0,100,5)
+print (d)
+
+lin_spaced_arr = np.linspace (0,100,5, dtype = int)
+print (lin_spaced_arr)
+
+b_float = np.arange(3, dtype=float)
+print (b_float)
+
+ex_array = np.array ("ML")
+print (ex_array)
+print (ex_array.dtype)
+
+# Return a new array of shape 3, filled with ones. 
+ones = np.ones (3)
+print (ones)
+# Return a new array of shape 3, filled with zeroes.
+zeros = np.zeros (3)
+print (zeros)
+# Return a new array of shape 3, without initializing entries.
+emp_arr = np.empty (3)
+print (emp_arr)
+# Return a new array of shape 3 with random numbers between 0 and 1.
+rand_arr = np.random.rand (3)
+print (rand_arr)
+
+two_d_arr = np.array ([[1,2,3],[4,5,6]])
+print (two_d_arr)
+
+#Using reshape()
+one_d_arr = np.array ([1,2,3,4,5,6])
+
+multi_d_arr = np.reshape (one_d_arr, (2,3))
+print (multi_d_arr)
+
+#Broadcasting 
+vector = np.array ([1,2])
+print (vector * 1.6)
+
+# Indexing on a 2-D array
+two_dim = np.array(([1, 2, 3],
+          [4, 5, 6], 
+          [7, 8, 9]))
+
+# Select element number 8 from the 2-D array using indices i, j and two sets of brackets
+print(two_dim[2][1])
+
+# Select element number 8 from the 2-D array, this time using i and j indexes in a single 
+# set of brackets, separated by a comma
+print(two_dim[2,1])
+
+#STACKING 
+
+a1 = np.array([[1,1], 
+               [2,2]])
+a2 = np.array([[3,3],
+              [4,4]])
+print(f'a1:\n{a1}')
+print(f'a2:\n{a2}')
+# Stack the arrays vertically
+vert_stack = np.vstack((a1, a2))
+print(vert_stack)
+# Stack the arrays horizontally
+horz_stack = np.hstack((a1, a2))
+print(horz_stack)
+
+# Split the horizontally stacked array into 2 separate arrays of equal size
+horz_split_two = np.hsplit(horz_stack,2)
+print(horz_split_two)
+
+# Split the horizontally stacked array into 4 separate arrays of equal size
+horz_split_four = np.hsplit(horz_stack,4)
+print(horz_split_four)
+
+# Split the horizontally stacked array after the first column
+horz_split_first = np.hsplit(horz_stack,[1])
+print(horz_split_first)
+# Split the vertically stacked array into 2 separate arrays of equal size
+vert_split_two = np.vsplit(vert_stack,2)
+print(vert_split_two)
+
+# Split the vertically stacked array into 4 separate arrays of equal size
+vert_split_four = np.vsplit(vert_stack,4)
+print(vert_split_four)
+
+# Split the vertically stacked array after the first and third row
+vert_split_first_third = np.vsplit(vert_stack,[1,3])
+print(vert_split_first_third)
